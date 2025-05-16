@@ -1,4 +1,6 @@
+import { Toaster } from "sonner";
 import "../styles/globals.css";
+import NextTopLoader from "nextjs-toploader";
 
 export const metadata = {
   title: "Create Next App",
@@ -8,7 +10,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={` antialiased`}>{children}</body>
+      <body className={` antialiased`}>
+        <NextTopLoader  color="#1C64F2" />
+        {children}
+        <Toaster />
+      </body>
     </html>
   );
 }

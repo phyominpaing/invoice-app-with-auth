@@ -3,8 +3,8 @@ import Header from '../components/Header'
 import HeroSection from '../components/HeroSection'
 import IntroSection from '../components/IntroSection'
 import Footer from '../components/Footer'
-import ContentSection from '../components/ContentSection'
 import FeatureSection from '../components/FeatureSection'
+import CompanyContentSection from '../components/CompanyContentSection'
 
 const HomePage = () => {
   return (
@@ -12,7 +12,7 @@ const HomePage = () => {
     <Header/>
     <HeroSection/>
     <IntroSection/>
-    <ContentSection/>
+    <CompanyContentSection/>
     <FeatureSection/>
     <Footer/>
     </>

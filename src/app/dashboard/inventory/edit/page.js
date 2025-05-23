@@ -1,8 +1,8 @@
-import React from 'react'
+import InventoryEditPage from '@/features/inventory/pages/InventoryEditPage'
 
 const Page = () => {
   return (
-    <div>Page</div>
+    <InventoryEditPage />
   )
 }
 

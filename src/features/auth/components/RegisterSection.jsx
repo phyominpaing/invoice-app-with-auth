@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useForm } from "react-hook-form";
 import { userRegister } from "@/services/auth";
 import { toast } from "sonner";
+import { useRouter } from "next/navigation";
 
 const RegisterSection = () => {
   const {
@@ -13,6 +14,8 @@ const RegisterSection = () => {
     watch,
     formState: { errors },
   } = useForm();
+
+  const router = useRouter();
 
   const password = watch("password");
 
@@ -34,6 +37,9 @@ const RegisterSection = () => {
         throw new Error(json.message || "Registration failed");
       }
       toast.success("Registration successful");
+
+      // programatic route
+      router.push("/login");
     } catch (error) {
       toast.error(error.message);
       console.error(error);

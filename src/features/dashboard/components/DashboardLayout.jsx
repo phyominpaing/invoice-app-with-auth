@@ -1,6 +1,5 @@
 "use client";
 import useAccountStore from "@/store/useAccountStore";
-import DashboardSideBar from "./DashboardSideBar";
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 
@@ -16,7 +15,7 @@ const DashboardLayout = ({ children }) => {
 
   return (
     <>
-      <main className="">
+      <main className="p-7">
         {/* <div className="col-span-2">
           <DashboardSideBar />
         </div> */}

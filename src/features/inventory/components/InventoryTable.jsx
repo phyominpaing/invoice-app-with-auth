@@ -4,7 +4,7 @@ import InventoryTableEmptyRow from "./InventoryTableEmptyRow";
 
 const InventoryTable = ({ products }) => {
   return (
-    <div className="relative overflow-x-auto shadow-md border border-slate-200 sm:rounded-lg">
+    <div className="relative overflow-x-auto mb-3 shadow-md border border-slate-200 sm:rounded-lg">
       <table className="w-full text-sm text-left border rtl:text-right text-gray-500 dark:text-gray-400">
         <thead className="text-xs border-b border-b-slate-200 text-gray-700 uppercase bg-blue-50 dark:bg-gray-700 dark:text-gray-400">
           <tr>
@@ -25,7 +25,7 @@ const InventoryTable = ({ products }) => {
         </thead>
         <tbody>
           <InventoryTableEmptyRow />
-          {products.map((product) => (
+          {products?.map((product) => (
             <InventoryTableRow key={product.id} product={product} />
           ))}
         </tbody>

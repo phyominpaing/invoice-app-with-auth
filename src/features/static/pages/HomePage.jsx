@@ -6,6 +6,7 @@ import Footer from '../components/Footer'
 import FeatureSection from '../components/FeatureSection'
 import CompanyContentSection from '../components/CompanyContentSection'
 
+
 const HomePage = () => {
   return (
     <>

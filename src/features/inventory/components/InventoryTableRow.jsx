@@ -34,7 +34,7 @@ const InventoryTableRow = ({ product }) => {
       <td className="px-6 py-4 text-end">${product.price}</td>
       <td className="px-6 py-4 flex gap-1 items-center justify-end text-center">
         <Link
-          href="#"
+          href={`/dashboard/inventory/${product.id}/edit`}
           className=" size-9 border hover:bg-gray-200 active:scale-85 duration-100 rounded border-gray-400 text-gray-500 flex justify-center items-center font-medium   hover:underline"
         >
           <PencilLine className="size-5" />

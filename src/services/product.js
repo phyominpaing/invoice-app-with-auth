@@ -34,3 +34,14 @@ export const destroyProduct = (id) => {
     },
   });
 };
+
+export const updateProduct = (id, payLoad) => {
+  return fetch(`${productApiUrl}/${id}`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${useAccountStore.getState().token}`,
+    },
+    body: JSON.stringify(payLoad),
+  });
+}

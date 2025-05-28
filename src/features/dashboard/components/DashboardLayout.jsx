@@ -15,7 +15,7 @@ const DashboardLayout = ({ children }) => {
 
   return (
     <>
-      <main className="p-7">
+      <main className="p-10">
         {/* <div className="col-span-2">
           <DashboardSideBar />
         </div> */}

@@ -1,14 +1,16 @@
+"use client";
+
 import { productApiUrl } from "@/services/product";
-import { debounce, throttle } from "lodash";
+import { throttle } from "lodash";
 import { Plus, Search } from "lucide-react";
 import Link from "next/link";
-import React from "react";
+import { useRouter, useSearchParams } from "next/navigation";
+import React, { useEffect, useRef } from "react";
+import useProduct from "../hooks/useProduct";
 
-const InventoryActionBar = ({ setFetchUrl }) => {
-  const handleSearch = throttle((e) => {
-    const search = e.target.value;
-    setFetchUrl(`${productApiUrl}?q=${search}`);
-  }, 500)
+const InventoryActionBar = () => {
+  const {handleSearch, searchRef} = useProduct();
+
   return (
     <div className="flex justify-between items-center mb-3">
       <div className="relative">
@@ -16,6 +18,7 @@ const InventoryActionBar = ({ setFetchUrl }) => {
           <Search className="text-gray-500 dark:text-gray-400 size-4" />
         </div>
         <input
+          ref={searchRef}
           onChange={handleSearch}
           type="search"
           id="search"

@@ -1,10 +1,12 @@
-import { destroyProduct } from "@/services/product";
+import { destroyProduct, productApiUrl } from "@/services/product";
 import { FileText, PencilLine, Trash2 } from "lucide-react";
 import Link from "next/link";
 import React from "react";
 import { toast } from "sonner";
+import { useSWRConfig } from "swr";
 
 const InventoryTableRow = ({ product }) => {
+  const {mutate } = useSWRConfig();
   const handleDelete = async () => {
     if (!confirm("Are you sure you want to delete this product?")) return;
 
@@ -15,10 +17,13 @@ const InventoryTableRow = ({ product }) => {
         throw new Error(json.message);
       }
       toast.success(json.message);
+      mutate(productApiUrl);
     } catch (error) {
       toast.error(error.message);
     }
   };
+
+
 
   return (
     <tr className="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700 border-gray-200">

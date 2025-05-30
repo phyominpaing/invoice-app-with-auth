@@ -29,7 +29,6 @@ export const destroyProduct = (id) => {
   return fetch(`${productApiUrl}/${id}`, {
     method: "DELETE",
     headers: {
-      "Content-Type": "application/json",
       Authorization: `Bearer ${useAccountStore.getState().token}`,
     },
   });
@@ -44,4 +43,4 @@ export const updateProduct = (id, payLoad) => {
     },
     body: JSON.stringify(payLoad),
   });
-}
+};
